@@ -43,6 +43,9 @@
       </p>
       <button type="submit" class="btn btn-primary">Sign Up</button>
     </form>
+    <router-link to="/login" class="signup-link"
+      >already have an account?</router-link
+    >
   </div>
 </template>
 

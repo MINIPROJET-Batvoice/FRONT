@@ -21,6 +21,7 @@
         />
       </div>
       <button type="submit" class="btn btn-primary">Login</button>
+      <p v-if="error" style="color: red">{{ error }}</p>
     </form>
     <router-link to="/signup" class="signup-link"
       >Not registered yet?</router-link
@@ -38,6 +39,7 @@ export default {
         username: "",
         password: "",
       },
+      error: null, // Ajout de la propriété pour stocker le message d'erreur
     };
   },
   methods: {
@@ -68,6 +70,7 @@ export default {
           }
         })
         .catch((error) => {
+          this.error = error.response.data.message; // Affichage du message d'erreur dans l'interface
           console.error(error);
         });
     },
